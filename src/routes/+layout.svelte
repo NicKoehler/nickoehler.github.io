@@ -5,13 +5,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-		rel="stylesheet"
-	/><script>
+	<link rel="icon" href={favicon} /><script>
 		document.documentElement.classList.toggle(
 			'dark',
 			localStorage.theme === 'dark' ||
