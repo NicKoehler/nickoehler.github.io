@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+	* {
+		scroll-behavior: smooth;
+	}
+	h1 {
+		font-size: var(--text-4xl);
+	}
+	h2 {
+		font-size: var(--text-2xl);
+	}
+	h3 {
+		font-size: var(--text-xl);
+	}
+
+	p {
+		margin-block-end: 1em;
+		margin-block-start: 1em;
+	}
+
+	a {
+		@apply text-sky-700;
+	}
+	a:hover {
+		@apply text-gray-600;
+	}
+
+	.dark {
+		a {
+			@apply text-sky-300;
+		}
+		a:hover {
+			@apply text-gray-400;
+		}
+	}
+
+	ul,
+	menu {
+		list-style: disc;
+		list-style-position: inside;
+	}
+}
