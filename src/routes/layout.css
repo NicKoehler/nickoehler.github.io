@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
@@ -13,6 +14,13 @@
 	}
 	h3 {
 		font-size: var(--text-xl);
+	}
+	h4 {
+		font-size: var(--text-lg);
+	}
+
+	blockquote {
+		@apply bg-gray-200 pl-2 pr-2 rounded;
 	}
 
 	p {
@@ -33,6 +41,10 @@
 		}
 		a:hover {
 			@apply text-gray-400;
+		}
+
+		blockquote {
+			@apply bg-gray-700;
 		}
 	}
 
