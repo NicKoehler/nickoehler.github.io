@@ -53,10 +53,12 @@ export async function loadData(lang: string): Promise<MarkdownData> {
 						query: '?raw',
 						import: 'default'
 					})
-				).map(async ([_, loader], index) => ({
-					id: index + 1,
-					text: (await loader()) as string
-				}))
+				)
+					.reverse()
+					.map(async ([_, loader], index) => ({
+						id: index + 1,
+						text: (await loader()) as string
+					}))
 			)
 		};
 	} else {
@@ -98,10 +100,12 @@ export async function loadData(lang: string): Promise<MarkdownData> {
 						query: '?raw',
 						import: 'default'
 					})
-				).map(async ([_, loader], index) => ({
-					id: index + 1,
-					text: (await loader()) as string
-				}))
+				)
+					.reverse()
+					.map(async ([_, loader], index) => ({
+						id: index + 1,
+						text: (await loader()) as string
+					}))
 			)
 		};
 	}
