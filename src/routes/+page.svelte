@@ -26,18 +26,17 @@
 			<ThemeToggle />
 		</div>
 		<div class="grid md:grid-cols-3 gap-6">
-			<div class="[&_p]:m-0 flex">
-				<Card>
+			<Card>
+				<div class="[&_p]:m-0 flex flex-col justify-center">
 					<img
+						fetchpriority="high"
 						src="https://avatars.githubusercontent.com/u/53040044"
 						class="rounded-2xl object-cover mb-6 shadow-lg"
 						alt="profile"
 					/>
-					{#if data !== undefined}
-						<SvelteMarkdown source={data.contacts} />
-					{/if}
-				</Card>
-			</div>
+					<SvelteMarkdown source={data.contacts} />
+				</div>
+			</Card>
 			<div class="md:col-span-2 flex">
 				<Card>
 					<SvelteMarkdown source={data.intro} />

@@ -6,7 +6,7 @@
 	id="language"
 	aria-label="language"
 	bind:value={$languageStore}
-	class="p-3 pr-4 rounded-lg bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer"
+	class="p-3.5 pr-4 rounded-lg bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-800 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 cursor-pointer"
 >
 	{#each [['en', 'English'], ['it', 'Italiano']] as [code, lang] (code)}
 		<option value={code}>{lang}</option>

@@ -64,6 +64,7 @@
 <div class="flex justify-center">
 	<div class="bg-gray-50 rounded-4xl shadow-2xl">
 		<img
+			fetchpriority="high"
 			class="p-6 size-40"
 			bind:this={img}
 			src={visible ? href : undefined}
