@@ -62,7 +62,7 @@
 </script>
 
 <div class="flex justify-center">
-	<div class="bg-gray-00 rounded-4xl shadow-2xl">
+	<div class="bg-gray-50 rounded-4xl shadow-2xl">
 		<img
 			class="p-6 size-40"
 			bind:this={img}
