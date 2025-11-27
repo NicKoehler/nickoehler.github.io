@@ -7,15 +7,19 @@
 	import { languageStore } from '$lib/stores/language';
 	import type { Item, MarkdownData } from '$lib/types/MarkdownData';
 	import SvelteMarkdown from '@humanspeak/svelte-markdown';
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	let data: MarkdownData | undefined = $state();
 	let tabs: Item[] | undefined = $state();
 	let activeTab = $state(0);
-	languageStore.subscribe(async (lang) => {
-		if (lang) {
-			data = await loadData(lang);
-			tabs = [data.skills, data.experiences, data.projects];
-		}
+
+	onMount(() => {
+		languageStore.subscribe(async (lang) => {
+			if (lang) {
+				data = await loadData(lang);
+				tabs = [data.skills, data.experiences, data.projects];
+			}
+		});
 	});
 </script>
 

@@ -1,7 +1,8 @@
 import { writable } from 'svelte/store';
+import { browser } from '$app/environment';
 
 function getLanguage(): string {
-	if (localStorage.getItem('language')) {
+	if (browser && localStorage.getItem('language')) {
 		return localStorage.getItem('language') ?? 'en';
 	}
 	return navigator.language === 'it-IT' ? 'it' : 'en';
@@ -10,7 +11,7 @@ function getLanguage(): string {
 export const languageStore = writable(getLanguage());
 
 languageStore.subscribe((value) => {
-	if (value) {
+	if (browser && value) {
 		localStorage.setItem('language', value);
 	}
 });

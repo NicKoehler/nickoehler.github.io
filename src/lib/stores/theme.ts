@@ -1,17 +1,23 @@
 import { writable } from 'svelte/store';
+import { browser } from '$app/environment';
 
 export type Theme = 'light' | 'dark';
 
 function getInitialTheme(): Theme {
-	if (localStorage.getItem('theme')) {
+	if (browser && localStorage.getItem('theme')) {
 		return localStorage.getItem('theme') as Theme;
 	}
-	return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	if (typeof window !== 'undefined') {
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	}
+	return 'light';
 }
 
 export const theme = writable<Theme>(getInitialTheme());
 
 theme.subscribe((value) => {
-	document.documentElement.classList.toggle('dark', value === 'dark');
-	localStorage.setItem('theme', value);
+	if (browser) {
+		document.documentElement.classList.toggle('dark', value === 'dark');
+		localStorage.setItem('theme', value);
+	}
 });
