@@ -1,24 +1,15 @@
-export type MardkdownData = {
+export type Item = {
+	label: string;
 	data: {
-		intro: { text: string };
-		contacts: { text: string };
-		skills: [
-			{
-				id: number;
-				text: string;
-			}
-		];
-		experiences: [
-			{
-				id: number;
-				text: string;
-			}
-		];
-		projects: [
-			{
-				id: number;
-				text: string;
-			}
-		];
-	};
+		id: number;
+		text: string;
+	}[];
+};
+
+export type MarkdownData = {
+	intro: string;
+	contacts: string;
+	skills: Item;
+	experiences: Item;
+	projects: Item;
 };

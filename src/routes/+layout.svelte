@@ -5,6 +5,7 @@
 </script>
 
 <svelte:head>
+	<title>Nicola Grilli</title>
 	<link rel="icon" href={favicon} /><script>
 		document.documentElement.classList.toggle(
 			'dark',
